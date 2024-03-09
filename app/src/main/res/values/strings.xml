@@ -1,5 +1,3 @@
 <resources>
     <string name="app_name">Article</string>
-    <string name="todo">TODO</string>
-    <string name="create_article_post_button">Post</string>
 </resources>

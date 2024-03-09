@@ -2,5 +2,4 @@
 <resources>
     <color name="background">#141118</color>
     <color name="colorPrimary">#81D4FA</color>
-    <color name="colorPrimaryDark">@color/background</color>
 </resources>
