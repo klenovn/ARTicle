@@ -1,3 +1,5 @@
 <resources>
-    <string name="app_name">Article</string>
+    <string name="app_name">ARTicle</string>
+    <string name="my_articles">Мои статьи</string>
+    <string name="about_me">Обо мне</string>
 </resources>
