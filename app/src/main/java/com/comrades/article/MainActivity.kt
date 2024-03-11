@@ -1,4 +1,37 @@
 package com.comrades.article
 
-class MainActivity {
+import android.os.Bundle
+import android.widget.Button
+import android.widget.EditText
+import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
+
+
+class MainActivity: AppCompatActivity(){
+    override fun onCreate(savedInstanceState: Bundle?){
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.autorization_activity)
+
+        val btnIn = findViewById<Button>(R.id.btn1)
+        val editTextEmail = findViewById<EditText>(R.id.textEmailAddress)
+        val editTextPassword =  findViewById<EditText>(R.id.textPassword)
+        btnIn.setOnClickListener {
+            var email = editTextEmail.text.toString()
+            var password = editTextPassword.text.toString()
+            if (email == EMAIL && password == PASSWORD){
+                Toast.makeText(
+                    applicationContext,
+                    TOAST_STR,
+                    Toast.LENGTH_LONG
+                ).show()
+            }
+
+        }
+    }
+
+    companion object{
+        val EMAIL = "111"
+        val PASSWORD = "000"
+        val TOAST_STR = "Вы ввели верный логин"
+    }
 }

@@ -1,3 +1,14 @@
 <resources>
-    <string name="app_name">Article</string>
+    <string name="app_name">HW3</string>
+    <string name="registration_text">Войдите с использованием чего-то там</string>
+    <string name="forget">Я всё забыл</string>
+    <string name="uid">Your ID</string>
+    <string name="upassword">Your Password</string>
+    <string name="password">Пароль</string>
+    <string name="in">Войти</string>
+    <string name="reg">Зарегистрироваться</string>
+    <string name="phone">Телефон или почта</string>
+    <string name="more">Подробнее</string>
+    <string name="repeat">Повторить</string>
+    <string name="next">Пропустить</string>
 </resources>
