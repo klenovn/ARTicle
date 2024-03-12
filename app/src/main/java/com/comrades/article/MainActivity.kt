@@ -10,10 +10,5 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        if (savedInstanceState == null) {
-            supportFragmentManager.commit {
-                add<CreateArticleFragment>(R.id.fragment_container, "createArticle")
-            }
-        }
     }
 }
