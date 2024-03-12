@@ -1,5 +1,6 @@
 package com.comrades.article
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
@@ -10,11 +11,15 @@ import androidx.appcompat.app.AppCompatActivity
 class MainActivity: AppCompatActivity(){
     override fun onCreate(savedInstanceState: Bundle?){
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.autorization_activity)
+        setContentView(R.layout.authorization_activity)
 
         val btnIn = findViewById<Button>(R.id.btn1)
+        val btnReg = findViewById<Button>(R.id.btn2)
+
         val editTextEmail = findViewById<EditText>(R.id.textEmailAddress)
         val editTextPassword =  findViewById<EditText>(R.id.textPassword)
+
+
         btnIn.setOnClickListener {
             var email = editTextEmail.text.toString()
             var password = editTextPassword.text.toString()
@@ -26,6 +31,11 @@ class MainActivity: AppCompatActivity(){
                 ).show()
             }
 
+        }
+
+        btnReg.setOnClickListener {
+            val intent = Intent(applicationContext, RegistrationActivity::class.java)
+            startActivity(intent)
         }
     }
 

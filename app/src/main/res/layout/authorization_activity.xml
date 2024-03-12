@@ -15,7 +15,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/autorization"
+            app:srcCompat="@drawable/authorization"
             app:shapeAppearanceOverlay="@style/circular"
             app:strokeWidth="1dp"
             app:strokeColor="@color/black"/>
@@ -50,9 +50,9 @@
         app:layout_constraintTop_toBottomOf="@id/textView1"/>
 
     <GridLayout
-        android:id="@+id/inputlayoutEmail"
+        android:id="@+id/inputLayoutEmail"
         android:layout_width="292dp"
-        android:layout_height="60dp"
+        android:layout_height="50dp"
         android:layout_marginStart="34dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="34dp"
@@ -63,7 +63,7 @@
 
         <ImageView
             android:id="@+id/emailIcon"
-            android:layout_width="60dp"
+            android:layout_width="50dp"
             android:layout_height="match_parent"
             android:layout_column="0"
             android:padding="15dp"
@@ -72,7 +72,7 @@
         <EditText
             android:id="@+id/textEmailAddress"
             android:layout_width="228dp"
-            android:layout_height="50dp"
+            android:layout_height="40dp"
             android:ems="20"
             android:layout_margin="5dp"
             android:hint="@string/phone"
@@ -86,18 +86,18 @@
         android:id="@+id/textPAS"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="10dp"
         android:layout_marginStart="47dp"
         android:text="@string/upassword"
         android:textColor="@color/light_grey"
         android:textSize="14sp"
         app:layout_constraintStart_toStartOf="@id/textView1"
-        app:layout_constraintTop_toBottomOf="@+id/inputlayoutEmail" />
+        app:layout_constraintTop_toBottomOf="@+id/inputLayoutEmail" />
 
     <GridLayout
-        android:id="@+id/inputlayoutPassword"
+        android:id="@+id/inputLayoutPassword"
         android:layout_width="292dp"
-        android:layout_height="60dp"
+        android:layout_height="50dp"
         android:layout_marginStart="34dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="34dp"
@@ -108,16 +108,17 @@
 
         <ImageView
             android:id="@+id/passwordIcon"
-            android:layout_width="60dp"
+            android:layout_width="50dp"
             android:layout_height="match_parent"
             android:layout_column="0"
             android:padding="15dp"
-            android:src="@drawable/email" />
+
+            android:src="@drawable/icon_password" />
 
         <EditText
             android:id="@+id/textPassword"
             android:layout_width="236dp"
-            android:layout_height="50dp"
+            android:layout_height="40dp"
             android:layout_margin="5dp"
             android:background="@android:color/transparent"
             android:ems="20"
@@ -137,15 +138,15 @@
         android:text="@string/forget"
         android:textColor="@color/pink"
         android:textSize="14sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/inputlayoutPassword" />
+        app:layout_constraintStart_toStartOf="@id/textView1"
+        app:layout_constraintTop_toBottomOf="@id/inputLayoutPassword" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btn1"
         android:layout_width="292dp"
         android:layout_height="50dp"
         android:layout_marginStart="34dp"
-        android:layout_marginTop="22dp"
+        android:layout_marginTop="35dp"
         android:layout_marginEnd="34dp"
         android:background="@drawable/button_rounded_1"
         android:padding="10dp"
