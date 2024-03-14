@@ -2,4 +2,6 @@
     <string name="app_name">ARTicle</string>
     <string name="my_articles">Мои статьи</string>
     <string name="about_me">Обо мне</string>
+    <string name="robot_desc">robot</string>
+    <string name="back_button_desc">back</string>
 </resources>

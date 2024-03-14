@@ -16,7 +16,7 @@ class ProfileActivity: AppCompatActivity(R.layout.user_profile) {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        findViewById<RecyclerView>(R.id.search_rv).apply{
+        findViewById<RecyclerView>(R.id.articles_rv).apply{
             layoutManager = LinearLayoutManager(context)
             adapter = ProfileAdapter(fillList())
         }
@@ -35,7 +35,6 @@ class ProfileActivity: AppCompatActivity(R.layout.user_profile) {
             finish()
         }
     }
-
 
     private fun fillList(): List<Article> {
         val data = mutableListOf<Article>()

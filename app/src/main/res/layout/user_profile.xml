@@ -1,28 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    tools:context=".ProfileActivity">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="45dp"
-        android:layout_margin="7dp"
-        android:orientation="horizontal">
-
-        <ImageButton
-            android:id="@+id/back_button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            android:layout_gravity="center_vertical"
-            android:src="@drawable/back_button_image"
-            android:background="@android:color/transparent"
-            tools:ignore="ContentDescription" />
-    </LinearLayout>
+    <ImageButton
+        android:id="@+id/back_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/profile_default_margin"
+        android:layout_gravity="center_vertical"
+        android:src="@drawable/back_button_image"
+        android:background="@null"
+        android:contentDescription="@string/back_button_desc" />
 
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
@@ -33,42 +26,31 @@
             android:layout_height="match_parent"
             android:orientation="vertical">
 
-            <com.google.android.material.card.MaterialCardView
-                android:layout_width="180dp"
-                android:layout_height="180dp"
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/profile_image"
+                android:layout_width="@dimen/profile_image_size"
+                android:layout_height="@dimen/profile_image_size"
+                android:background="@null"
                 android:layout_gravity="center"
+                android:layout_marginBottom="@dimen/profile_default_margin"
                 android:layout_marginTop="40dp"
-                android:layout_marginBottom="20dp"
-                app:cardCornerRadius="250dp"
-                app:cardElevation="0dp"
-                app:strokeColor="#666666"
-                app:strokeWidth="1dp">
-
-                <ImageView
-                    android:id="@+id/profile_image"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:scaleType="centerCrop"
-                    android:src="@drawable/example_profile_image"
-                    android:importantForAccessibility="no" />
-
-            </com.google.android.material.card.MaterialCardView>
+                android:src="@drawable/example_profile_image"
+                android:scaleType="centerCrop"
+                android:adjustViewBounds="true"
+                app:shapeAppearanceOverlay="@style/circleImageView"
+                app:strokeColor="@color/black"
+                app:strokeWidth="@dimen/stroke_width" />
 
             <TextView
                 android:id="@+id/profile_nickname"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:textColor="@color/pink"
-                android:textSize="25sp"
-                android:textStyle="bold" />
+                style="@style/nicknameTextStyle" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="30dp"
                 android:layout_marginTop="15dp"
-                android:textSize="20sp"
+                android:textSize="@dimen/profile_text_size"
                 android:text="@string/about_me"
                 android:textColor="@color/grey" />
 
@@ -80,10 +62,10 @@
                 android:layout_marginTop="10dp"
                 android:layout_marginEnd="30dp"
                 android:layout_marginBottom="10dp"
-                app:cardCornerRadius="10dp"
+                app:cardCornerRadius="@dimen/corner_radius"
                 app:cardElevation="0dp"
                 app:strokeColor="@color/grey"
-                app:strokeWidth="1dp">
+                app:strokeWidth="@dimen/stroke_width">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -98,7 +80,7 @@
                         android:layout_marginEnd="30dp"
                         android:layout_marginBottom="15dp"
                         android:src="@drawable/robot_image"
-                        android:importantForAccessibility="no" />
+                        android:contentDescription="@string/robot_desc" />
 
                     <TextView
                         android:id="@+id/profile_description"
@@ -106,8 +88,8 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_vertical"
                         android:layout_margin="5dp"
-                        android:textSize="22sp"
-                        android:textColor="@color/black" />
+                        android:textSize="@dimen/profile_text_size"
+                        android:textColor="@color/grey" />
                 </LinearLayout>
 
             </com.google.android.material.card.MaterialCardView>
@@ -115,8 +97,8 @@
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="20dp"
+                android:layout_marginLeft="@dimen/profile_default_margin"
+                android:layout_marginRight="@dimen/profile_default_margin"
                 android:layout_marginBottom="15dp"
                 android:layout_marginTop="15dp"
                 android:background="@color/grey" />
@@ -126,13 +108,13 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="30dp"
-                android:textSize="20sp"
+                android:textSize="@dimen/profile_text_size"
                 android:textStyle="bold"
                 android:text="@string/my_articles"
                 android:textColor="@color/black" />
 
             <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/search_rv"
+                android:id="@+id/articles_rv"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_margin="5dp"
