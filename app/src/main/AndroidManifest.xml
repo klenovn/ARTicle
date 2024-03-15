@@ -23,6 +23,8 @@
             android:name=".CreateArticleActivity"
             android:windowSoftInputMode="adjustResize">
         </activity>
+        <activity android:name=".ProfileActivity">
+        </activity>
     </application>
 
 </manifest>

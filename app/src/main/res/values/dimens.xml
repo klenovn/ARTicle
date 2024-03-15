@@ -2,4 +2,12 @@
 <resources>
     <dimen name="create_article_default_margin">20dp</dimen>
     <dimen name="create_article_icon_size">48dp</dimen>
+    <dimen name="profile_image_size">220dp</dimen>
+    <dimen name="stroke_width">1dp</dimen>
+    <dimen name="nickname_text_size">27sp</dimen>
+    <dimen name="corner_radius">15dp</dimen>
+    <dimen name="profile_text_size">19sp</dimen>
+    <dimen name="profile_default_margin">20dp</dimen>
+    <dimen name="article_title_text_size">24sp</dimen>
+    <dimen name="article_item_image">90dp</dimen>
 </resources>
