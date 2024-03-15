@@ -4,7 +4,7 @@ import androidx.fragment.app.Fragment
 import androidx.viewpager2.adapter.FragmentStateAdapter
 
 class ArticleAdapter(
-    fragment: MainActivity,
+    fragment: MainMenuActivity,
     private val articles: List<ArticleResponse>
 ): FragmentStateAdapter(fragment) {
 

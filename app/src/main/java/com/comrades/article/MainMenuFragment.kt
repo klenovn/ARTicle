@@ -19,14 +19,14 @@ const val CAPTION = "caption"
 const val IMAGE_ID = "image_id"
 
 
-class MainFragment: Fragment(R.layout.main_fragment) {
+class MainFragment: Fragment(R.layout.main_menu_fragment) {
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.main_fragment, container, false)
+        return inflater.inflate(R.layout.main_menu_fragment, container, false)
     }
 
 
@@ -44,7 +44,7 @@ class MainFragment: Fragment(R.layout.main_fragment) {
         }
         val moreButton = view.findViewById<Button>(R.id.button_more)
         moreButton.setOnClickListener {
-            val intent = Intent(it.context, SecondActivity::class.java)
+            val intent = Intent(it.context, ArticleActivity::class.java)
             intent.putExtra(ID, arguments?.getInt(ID))
             context?.startActivity(intent)
         }

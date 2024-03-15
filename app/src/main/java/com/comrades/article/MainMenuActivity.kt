@@ -6,13 +6,13 @@ import android.widget.FrameLayout
 import androidx.core.view.isVisible
 import androidx.viewpager2.widget.ViewPager2
 
-class MainActivity : AppCompatActivity() {
+class MainMenuActivity : AppCompatActivity() {
     private lateinit var adapter: ArticleAdapter
     private lateinit var viewPager: ViewPager2
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.activity_main_menu)
 
         val progress = findViewById<FrameLayout>(R.id.progress_bar)
 

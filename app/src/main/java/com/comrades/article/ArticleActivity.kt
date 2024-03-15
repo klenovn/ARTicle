@@ -8,11 +8,11 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 
-class SecondActivity : AppCompatActivity() {
+class ArticleActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.second_activity)
+        setContentView(R.layout.article_activity)
         Log.d("MY_TAG", intent.getIntExtra(ID, 1).toString())
         val currId = intent.getIntExtra(ID, 1)
         val current: ArticleResponse = Controller.getDataById(currId)
