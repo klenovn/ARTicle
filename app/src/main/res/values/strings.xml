@@ -2,4 +2,5 @@
     <string name="app_name">Article</string>
     <string name="todo">TODO</string>
     <string name="create_article_post_button">Post</string>
+    <string name="create_article_content_description">Article Image</string>
 </resources>

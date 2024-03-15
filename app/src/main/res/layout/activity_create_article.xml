@@ -35,21 +35,29 @@
         app:layout_constraintBottom_toTopOf="@id/create_article_add_content_buttons"
         app:layout_constraintVertical_bias="0">
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/create_article_wrapper"
-            android:layout_marginStart="@dimen/create_article_default_margin"
-            android:layout_marginEnd="@dimen/create_article_default_margin"
+            android:id="@+id/create_article_content_wrapper"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/create_article_content_image_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toTopOf="parent"
+                android:scaleType="centerCrop"
+                android:contentDescription="@string/create_article_content_description"/>
 
             <EditText
                 android:id="@+id/article_heading"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/create_article_default_margin"
+                android:layout_marginEnd="@dimen/create_article_default_margin"
                 android:textStyle="bold"
                 android:hint="@string/todo"
                 android:scrollHorizontally="true"
                 android:singleLine="true"
-                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/create_article_content_image_view"
                 android:background="@null"
                 android:textSize="20sp"
                 android:layout_marginTop="10dp"/>
@@ -58,6 +66,8 @@
                 android:layout_marginTop="@dimen/create_article_default_margin"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/create_article_default_margin"
+                android:layout_marginEnd="@dimen/create_article_default_margin"
                 android:hint="@string/todo"
                 android:background="@null"
                 app:layout_constraintTop_toBottomOf="@id/article_heading"/>
@@ -84,14 +94,6 @@
             android:src="@drawable/baseline_add_photo_alternate_24"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            android:padding="5dp"/>
-        <ImageButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="?android:attr/selectableItemBackground"
-            android:src="@drawable/baseline_add_link_24"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintStart_toEndOf="@id/create_article_add_photo"
             android:padding="5dp"/>
     </androidx.constraintlayout.widget.ConstraintLayout>
 
