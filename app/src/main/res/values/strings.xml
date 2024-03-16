@@ -17,4 +17,20 @@
     <string name="about_me">Обо мне</string>
     <string name="robot_desc">robot</string>
     <string name="back_button_desc">back</string>
+    <string name="registration_text">Войдите в систему</string>
+    <string name="forget">Я всё забыл</string>
+    <string name="uid">Your ID</string>
+    <string name="upassword">Your Password</string>
+    <string name="password">Пароль</string>
+    <string name="in">Войти</string>
+    <string name="reg">Зарегистрироваться</string>
+    <string name="phone">Телефон или почта</string>
+    <string name="repeat">Повторить</string>
+    <string name="new_id">Create your unique ID</string>
+    <string name="new_username">Think about your username</string>
+    <string name="new_password">Now - password</string>
+    <string name="repeated_password">And now - repeat password</string>
+    <string name="smart_registration">Зарегистрируйтесь с умом..</string>
+    <string name="repeat_password">Повторите пароль</string>
+    <string name="username">Имя пользователя</string>
 </resources>
