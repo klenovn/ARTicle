@@ -1,5 +1,15 @@
 <resources>
-    <string name="app_name">Article</string>
+
+    <string name="app_name">ARTicle</string>
+    <string name="next">Пропустить</string>
+    <string name="more">Подробнее</string>
+    <string name="title">article_title</string>
+    <string name="caption">article_caption</string>
+    <string name="description">article_description</string>
+    <string name="contents">article_contents</string>
+    <string name="content_description_image">Image</string>
+    <string name="comments">Комментарии</string>
+    <string name="share">Поделиться</string>
     <string name="todo">TODO</string>
     <string name="create_article_post_button">Post</string>
     <string name="create_article_content_description">Article Image</string>
