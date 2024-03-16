@@ -21,8 +21,8 @@ class AuthorizationActivity: AppCompatActivity(){
 
 
         btnIn.setOnClickListener {
-            var email = editTextEmail.text.toString()
-            var password = editTextPassword.text.toString()
+            val email = editTextEmail.text.toString()
+            val password = editTextPassword.text.toString()
             if (email == EMAIL && password == PASSWORD){
                 Toast.makeText(
                     applicationContext,
