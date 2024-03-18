@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_height="wrap_content"
+        android:layout_width="314dp"
+        android:text="@string/smart_registration"
+        android:textSize="22sp"
+        android:layout_marginStart="80dp"
+        android:layout_marginTop="100dp"
+        android:layout_marginEnd="80dp"
+        android:layout_marginBottom="100dp"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        />
+
+
+
+    <TextView
+android:id="@+id/textPAS"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:layout_marginTop="80dp"
+android:layout_marginStart="47dp"
+android:text="@string/new_password"
+android:textColor="@color/light_grey"
+android:textSize="14sp"
+app:layout_constraintStart_toStartOf="parent"
+app:layout_constraintTop_toBottomOf="@id/textView1" />
+
+<GridLayout
+android:id="@+id/inputLayoutPassword"
+android:layout_width="292dp"
+android:layout_height="50dp"
+android:layout_marginStart="34dp"
+android:layout_marginTop="8dp"
+android:layout_marginEnd="34dp"
+android:background="@drawable/input_layout_1"
+app:layout_constraintEnd_toEndOf="parent"
+app:layout_constraintStart_toStartOf="parent"
+app:layout_constraintTop_toBottomOf="@+id/textPAS">
+
+<ImageView
+    android:id="@+id/passwordIcon"
+    android:layout_width="50dp"
+    android:layout_height="match_parent"
+    android:layout_column="0"
+    android:padding="15dp"
+
+    android:src="@drawable/icon_password" />
+
+<EditText
+    android:id="@+id/textPassword"
+    android:layout_width="236dp"
+    android:layout_height="40dp"
+    android:layout_margin="5dp"
+    android:background="@android:color/transparent"
+    android:ems="20"
+    android:hint="@string/password_input"
+    android:inputType="textPassword"
+    android:padding="10dp"
+    android:textColor="@color/light_grey" />
+</GridLayout>
+
+<TextView
+android:id="@+id/hiddenErrorPassword"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:layout_marginStart="47dp"
+android:visibility="invisible"
+android:layout_marginTop="10dp"
+android:text="@string/invalid"
+android:textStyle="bold"
+android:textColor="@color/red"
+android:textSize="12sp"
+app:layout_constraintStart_toStartOf="parent"
+app:layout_constraintTop_toBottomOf="@id/inputLayoutPassword"/>
+
+<TextView
+android:id="@+id/textRPAS"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:layout_marginTop="10dp"
+android:layout_marginStart="47dp"
+android:text="@string/repeated_password"
+android:textColor="@color/light_grey"
+android:textSize="14sp"
+app:layout_constraintStart_toStartOf="parent"
+app:layout_constraintTop_toBottomOf="@+id/hiddenErrorPassword" />
+
+<GridLayout
+android:id="@+id/inputLayoutRepeatedPassword"
+android:layout_width="292dp"
+android:layout_height="50dp"
+android:layout_marginStart="34dp"
+android:layout_marginTop="8dp"
+android:layout_marginEnd="34dp"
+android:background="@drawable/input_layout_1"
+app:layout_constraintEnd_toEndOf="parent"
+app:layout_constraintStart_toStartOf="parent"
+app:layout_constraintTop_toBottomOf="@+id/textRPAS">
+
+<ImageView
+    android:id="@+id/repeatedPasswordIcon"
+    android:layout_width="50dp"
+    android:layout_height="match_parent"
+    android:layout_column="0"
+    android:padding="15dp"
+
+    android:src="@drawable/icon_password" />
+
+<EditText
+    android:id="@+id/textRepeatedPassword"
+    android:layout_width="236dp"
+    android:layout_height="40dp"
+    android:layout_margin="5dp"
+    android:background="@android:color/transparent"
+    android:ems="20"
+    android:hint="@string/repeat_password"
+    android:inputType="textPassword"
+    android:padding="10dp"
+    android:textColor="@color/light_grey" />
+</GridLayout>
+<TextView
+android:id="@+id/hiddenErrorRepeatedPassword"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:layout_marginStart="47dp"
+android:layout_marginTop="10dp"
+android:text="@string/invalid"
+android:textStyle="bold"
+android:visibility="invisible"
+android:textColor="@color/red"
+android:textSize="12sp"
+app:layout_constraintStart_toStartOf="parent"
+app:layout_constraintTop_toBottomOf="@id/inputLayoutRepeatedPassword"/>
+
+<androidx.appcompat.widget.AppCompatButton
+android:id="@+id/btn2"
+android:layout_width="292dp"
+android:layout_height="50dp"
+android:layout_marginStart="34dp"
+android:layout_marginTop="90dp"
+android:layout_marginEnd="34dp"
+android:background="@drawable/button_rounded_1"
+android:padding="10dp"
+android:text="@string/reg"
+android:textAllCaps="false"
+android:textColor="@color/pink"
+android:textSize="16sp"
+android:textStyle="bold"
+app:layout_constraintEnd_toEndOf="parent"
+app:layout_constraintStart_toStartOf="parent"
+app:layout_constraintTop_toBottomOf="@id/inputLayoutRepeatedPassword" />
+</androidx.constraintlayout.widget.ConstraintLayout>

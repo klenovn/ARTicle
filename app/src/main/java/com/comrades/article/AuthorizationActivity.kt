@@ -37,6 +37,7 @@ class AuthorizationActivity: AppCompatActivity(){
             val intent = Intent(applicationContext, RegistrationActivity::class.java)
             startActivity(intent)
         }
+
     }
 
     companion object{

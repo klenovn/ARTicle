@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/firstDataFragment">
+
+    <fragment
+        android:id="@+id/firstDataFragment"
+        android:name="com.comrades.article.FirstDataFragment"
+        android:label="FirstDataFragment" >
+        <action
+            android:id="@+id/action_firstDataFragment_to_secondDataFragment"
+            app:destination="@id/secondDataFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left" />
+    </fragment>
+    <fragment
+        android:id="@+id/secondDataFragment"
+        android:name="com.comrades.article.SecondDataFragment"
+        android:label="SecondDataFragment" >
+        <action
+            android:id="@+id/action_secondDataFragment_to_successRegistrationFragment"
+            app:destination="@id/successRegistrationFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left" />
+    </fragment>
+    <fragment
+        android:id="@+id/successRegistrationFragment"
+        android:name="com.comrades.article.SuccessRegistrationFragment"
+        android:label="SuccessRegistrationFragment" />
+</navigation>
