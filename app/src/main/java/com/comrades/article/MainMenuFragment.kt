@@ -57,7 +57,7 @@ class MainFragment: Fragment(R.layout.main_menu_fragment) {
                 TITLE to article.title,
                 DESCRIPTION to article.description,
                 CAPTION to article.caption,
-                IMAGE_ID to article.imageUri
+                IMAGE_ID to article.imageId
             )
         }
     }

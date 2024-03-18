@@ -1,6 +1,5 @@
 package com.comrades.article
 
-import android.app.Activity
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
@@ -51,7 +50,7 @@ class CreateArticleActivity : AppCompatActivity() {
 
         postButton.setOnClickListener {
             if (validateInputs()) {
-                val newArticleId = Controller.createArticle(titleEditText.text.toString(), "DebugUser", "Desc", contentEditText.text.toString(), pickedImageUri)
+                val newArticleId = Controller.createArticle(titleEditText.text.toString(), "DebugUser", "Desc", contentEditText.text.toString(),  R.drawable.jojo_main)
                 val intent = Intent(this, ArticleActivity::class.java).apply {
                     putExtra("id", newArticleId)
                 }
