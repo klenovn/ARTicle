@@ -1,8 +1,13 @@
 package com.comrades.article
 
+import android.net.Uri
+
 data class Article (
-    var title: String = "",
-    var text: String = "",
+    val id: Int,
     var authorNickname: String = "",
-    var image: String = ""
+    var title: String = "",
+    val description: String,
+    val caption: String,
+    val contents: String,
+    var image: Uri? = null
 )

@@ -8,6 +8,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 
+
 class ArticleActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -17,6 +18,8 @@ class ArticleActivity : AppCompatActivity() {
         val currId = intent.getIntExtra(ID, 1)
         val current: ArticleResponse = Controller.getDataById(currId)
 
+        val authorTV : TextView = findViewById(R.id.author_tv__second_fragment)
+        authorTV.text = "@${current.authorNickname}"
         val titleTV : TextView = findViewById(R.id.title_tv__second_fragment)
         titleTV.text = current.title
         val descTV : TextView = findViewById(R.id.description_tv__second_fragment)
@@ -41,7 +44,11 @@ class ArticleActivity : AppCompatActivity() {
             startActivity(shareIntent)
         }
 
-
+        authorTV.setOnClickListener {
+            val profileIntent = Intent(this, ProfileActivity::class.java)
+            profileIntent.putExtra("nickname", authorTV.text.toString())
+            startActivity(profileIntent)
+        }
     }
 
     companion object {

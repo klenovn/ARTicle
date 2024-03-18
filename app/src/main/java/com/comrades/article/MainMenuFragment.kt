@@ -13,6 +13,7 @@ import androidx.fragment.app.Fragment
 
 
 const val ID = "id"
+const val AUTHOR = "authorNickname"
 const val TITLE = "title"
 const val DESCRIPTION = "description"
 const val CAPTION = "caption"
@@ -33,6 +34,8 @@ class MainFragment: Fragment(R.layout.main_menu_fragment) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         arguments?.apply {
+            val authorTV : TextView = view.findViewById(R.id.author_tv__main_fragment)
+            authorTV.text = "@${getString(AUTHOR)}"
             val titleTV: TextView = view.findViewById(R.id.title_tv__main_fragment)
             titleTV.text = getString(TITLE)
             val descTV: TextView = view.findViewById(R.id.description_tv__main_fragment)
@@ -41,6 +44,13 @@ class MainFragment: Fragment(R.layout.main_menu_fragment) {
             captionTV.text = getString(CAPTION)
             val imageView: ImageView = view.findViewById(R.id.avatar)
             imageView.setImageResource(getInt(IMAGE_ID))
+
+            authorTV.setOnClickListener {
+                val profileIntent = Intent(it.context, ProfileActivity::class.java)
+                profileIntent.putExtra("nickname", authorTV.text.toString())
+                startActivity(profileIntent)
+            }
+
         }
         val moreButton = view.findViewById<Button>(R.id.button_more)
         moreButton.setOnClickListener {
@@ -54,6 +64,7 @@ class MainFragment: Fragment(R.layout.main_menu_fragment) {
         fun newInstance(article: ArticleResponse) = MainFragment().apply {
             arguments = bundleOf(
                 ID to article.id,
+                AUTHOR to article.authorNickname,
                 TITLE to article.title,
                 DESCRIPTION to article.description,
                 CAPTION to article.caption,
