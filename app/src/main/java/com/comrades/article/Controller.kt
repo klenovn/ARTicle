@@ -1,5 +1,7 @@
 package com.comrades.article
 
+import android.net.Uri
+import android.provider.MediaStore.Audio.Media
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay
@@ -20,7 +22,7 @@ object Controller {
                 "DESC $i",
                 "CAP $i",
                 "CONT $i",
-                if (i % 2 == 0) R.drawable.jojo_main else R.drawable.jujutsu_main
+                null
             )
             articlePool[i] = curr
         }
@@ -38,6 +40,20 @@ object Controller {
             }
 
         }
+    }
+
+    fun createArticle(
+        title: String,
+        caption: String,
+        description: String,
+        contents: String,
+        imageUri: Uri?
+    ) : Int {
+        val countArticles = articlePool.size
+        val article = ArticleResponse(countArticles, title, description, caption, contents, imageUri)
+        articlePool[countArticles] = article
+
+        return countArticles
     }
 
 }

@@ -26,7 +26,7 @@ class ArticleActivity : AppCompatActivity() {
         val contentsTV : TextView = findViewById(R.id.contents_tv__second_fragment)
         contentsTV.text = current.contents
         val imageView: ImageView = findViewById(R.id.avatar)
-        imageView.setImageResource(current.imageId)
+        imageView.setImageURI(current.imageUri)
 
 
         val shareButton: Button = findViewById(R.id.button_share)
@@ -40,7 +40,6 @@ class ArticleActivity : AppCompatActivity() {
             val shareIntent = Intent.createChooser(sendIntent, null)
             startActivity(shareIntent)
         }
-
 
     }
 
