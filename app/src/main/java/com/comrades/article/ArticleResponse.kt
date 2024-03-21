@@ -3,6 +3,7 @@ package com.comrades.article
 
 data class ArticleResponse(
     val id: Int,
+    val authorNickname: String,
     val title: String,
     val description: String,
     val caption: String,

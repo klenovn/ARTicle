@@ -1,4 +1,5 @@
 <resources>
+
     <string name="app_name">ARTicle</string>
     <string name="title">article_title</string>
     <string name="caption">article_caption</string>
@@ -40,4 +41,5 @@
     <string name="no_matching">Ваши пароли не совпадают</string>
     <string name="success">Вы успешно зарегестрированы в системе!</string>
     <string name="to_menu">Перейти в гланое меню</string>
+    <string name="by_author"> .by</string>
 </resources>

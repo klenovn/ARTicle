@@ -34,7 +34,7 @@
                 android:layout_gravity="center"
                 android:layout_marginBottom="@dimen/profile_default_margin"
                 android:layout_marginTop="40dp"
-                android:src="@drawable/example_profile_image"
+                android:src="@drawable/jujutsu_main"
                 android:scaleType="centerCrop"
                 android:adjustViewBounds="true"
                 app:shapeAppearanceOverlay="@style/circleImageView"

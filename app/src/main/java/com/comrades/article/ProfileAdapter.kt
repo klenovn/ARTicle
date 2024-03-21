@@ -6,8 +6,9 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+
 class ProfileAdapter(
-    private val articles: List<Article>
+    private var articles: List<ArticleResponse> = ArrayList()
 ) : RecyclerView.Adapter<ProfileAdapter.ArticleViewHolder>() {
 
     class ArticleViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
@@ -15,10 +16,10 @@ class ProfileAdapter(
         private val titleTextView: TextView = itemView.findViewById(R.id.item_title)
         private val articleImageView: ImageView = itemView.findViewById(R.id.item_image)
 
-        fun bind(article: Article) {
-            descriptionTextView.text = article.text
+        fun bind(article: ArticleResponse) {
+            descriptionTextView.text = article.caption
             titleTextView.text = article.title
-            articleImageView.setImageResource(R.drawable.example_article_image)
+            articleImageView.setImageResource(article.imageId)
         }
     }
 
@@ -30,6 +31,11 @@ class ProfileAdapter(
 
     override fun onBindViewHolder(holder: ArticleViewHolder, position: Int) {
         holder.bind(articles[position])
+    }
+
+    fun updateArticles(articles: List<ArticleResponse>) {
+        this.articles = articles
+        notifyDataSetChanged()
     }
 
     override fun getItemCount() = articles.size

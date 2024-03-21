@@ -16,6 +16,7 @@ object Controller {
         for (i in 0 .. 9) {
             val curr = ArticleResponse(
                 i,
+                "author$i",
                 "ART $i",
                 "DESC $i",
                 "CAP $i",
