@@ -26,7 +26,7 @@ class ProfileActivity: AppCompatActivity(R.layout.user_profile) {
             return
         }
 
-        user = UserData.getUserByNickname(userNickname)
+        user = UserController.getUserByNickname(userNickname)
 
         findViewById<RecyclerView>(R.id.articles_rv).apply{
             layoutManager = LinearLayoutManager(context)
@@ -34,7 +34,7 @@ class ProfileActivity: AppCompatActivity(R.layout.user_profile) {
         }
 
         findViewById<ImageView>(R.id.profile_image).apply {
-            setImageResource(R.drawable.jojo_main)
+            setImageResource(user.avatar)
         }
         findViewById<TextView>(R.id.profile_nickname).apply {
             text = "@${user.nickname}"

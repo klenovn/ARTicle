@@ -11,6 +11,8 @@ class ProfileArticlesViewModel () : ViewModel() {
     fun getArticlesList() = articlesList
 
     fun updateArticles(nickname: String) {
-        articlesList.value = ArticleData.getArticlesByNickname(nickname)
+        Controller.loadData{ it ->
+            articlesList.value = it.filter { it.authorNickname == nickname }
+        }
     }
 }
