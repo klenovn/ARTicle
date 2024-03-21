@@ -1,5 +1,6 @@
 package com.comrades.article
 
+
 data class ArticleResponse(
     val id: Int,
     val title: String,

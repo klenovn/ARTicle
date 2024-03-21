@@ -41,7 +41,6 @@ class ArticleActivity : AppCompatActivity() {
             startActivity(shareIntent)
         }
 
-
     }
 
     companion object {

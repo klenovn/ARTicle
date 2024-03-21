@@ -40,4 +40,18 @@ object Controller {
         }
     }
 
+    fun createArticle(
+        title: String,
+        caption: String,
+        description: String,
+        contents: String,
+        imageId: Int
+    ) : Int {
+        val countArticles = articlePool.size
+        val article = ArticleResponse(countArticles, title, description, caption, contents, imageId)
+        articlePool[countArticles] = article
+
+        return countArticles
+    }
+
 }
