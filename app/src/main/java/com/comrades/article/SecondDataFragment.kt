@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
+import android.widget.Toast
 import androidx.core.content.ContextCompat
 import androidx.navigation.findNavController
 
@@ -22,35 +23,81 @@ class SecondDataFragment : Fragment() {
         val editTextPassword = view.findViewById<EditText>(R.id.textPassword)
         val editTextRepeatedPassword = view.findViewById<EditText>(R.id.textRepeatedPassword)
         val hiddenErrorPassword = view.findViewById<TextView>(R.id.hiddenErrorPassword)
-        val hiddenErrorRepeatedPassword = view.findViewById<TextView>(R.id.hiddenErrorRepeatedPassword)
-
-
+        val hiddenErrorRepeatedPassword =
+            view.findViewById<TextView>(R.id.hiddenErrorRepeatedPassword)
+        val email = SecondDataFragmentArgs.fromBundle(requireArguments()).email
+        val username = SecondDataFragmentArgs.fromBundle(requireArguments()).username
 
         btnRegistration.setOnClickListener {
-            val flagField1 = isValidField(editTextPassword.text.toString(), fieldPosition = 3)
-            val flagField2 = isValidField(editTextPassword.text.toString(), editTextRepeatedPassword.text.toString(), 4)
+            var password = editTextPassword.text.toString()
+            var repeatedPassword = editTextRepeatedPassword.text.toString()
+            val flagField1 = isValidField(password, fieldPosition = 3)
+            val flagField2 = isValidField(password, repeatedPassword, 4)
             when {
-                flagField1 && flagField2 -> view.findNavController()
-                    .navigate(R.id.action_secondDataFragment_to_successRegistrationFragment)
+                flagField1 && flagField2 -> {
+
+                    add(email, username, password) { result: Boolean, error: Throwable? ->
+                        if (result) {
+                            view.findNavController()
+                                .navigate(R.id.action_secondDataFragment_to_successRegistrationFragment)
+                        } else
+                            Toast.makeText(
+                                context,
+                                TOAST_STR,
+                                Toast.LENGTH_LONG
+                            ).show()
+
+                    }
+                }
 
                 !flagField1 -> {
                     hiddenErrorPassword.visibility = View.VISIBLE
-                    hiddenErrorPassword.text = ContextCompat.getString(requireContext(), R.string.invalid)
-                    hiddenErrorPassword.setTextColor(ContextCompat.getColor(requireContext(), R.color.red))
+                    hiddenErrorPassword.text =
+                        ContextCompat.getString(requireContext(), R.string.invalid)
+                    hiddenErrorPassword.setTextColor(
+                        ContextCompat.getColor(
+                            requireContext(),
+                            R.color.red
+                        )
+                    )
                     hiddenErrorRepeatedPassword.visibility = View.VISIBLE
-                    hiddenErrorRepeatedPassword.text = ContextCompat.getString(requireContext(), R.string.invalid)
-                    hiddenErrorRepeatedPassword.setTextColor(ContextCompat.getColor(requireContext(), R.color.red))
+                    hiddenErrorRepeatedPassword.text =
+                        ContextCompat.getString(requireContext(), R.string.invalid)
+                    hiddenErrorRepeatedPassword.setTextColor(
+                        ContextCompat.getColor(
+                            requireContext(),
+                            R.color.red
+                        )
+                    )
                 }
+
                 flagField1 && !flagField2 -> {
                     hiddenErrorRepeatedPassword.visibility = View.VISIBLE
-                    hiddenErrorRepeatedPassword.text = ContextCompat.getString(requireContext(), R.string.no_matching)
-                    hiddenErrorRepeatedPassword.setTextColor(ContextCompat.getColor(requireContext(), R.color.red))
+                    hiddenErrorRepeatedPassword.text =
+                        ContextCompat.getString(requireContext(), R.string.no_matching)
+                    hiddenErrorRepeatedPassword.setTextColor(
+                        ContextCompat.getColor(
+                            requireContext(),
+                            R.color.red
+                        )
+                    )
                     hiddenErrorPassword.visibility = View.VISIBLE
-                    hiddenErrorPassword.text = ContextCompat.getString(requireContext(), R.string.valid)
-                    hiddenErrorPassword.setTextColor(ContextCompat.getColor(requireContext(), R.color.green))
+                    hiddenErrorPassword.text =
+                        ContextCompat.getString(requireContext(), R.string.valid)
+                    hiddenErrorPassword.setTextColor(
+                        ContextCompat.getColor(
+                            requireContext(),
+                            R.color.green
+                        )
+                    )
                 }
             }
         }
         return view
+    }
+
+
+    companion object {
+        val TOAST_STR = "Ошибка сети. Данные не были загружены в систему."
     }
 }

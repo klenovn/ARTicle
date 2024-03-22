@@ -40,4 +40,6 @@
     <string name="no_matching">Ваши пароли не совпадают</string>
     <string name="success">Вы успешно зарегестрированы в системе!</string>
     <string name="to_menu">Перейти в гланое меню</string>
+    <string name="user_exists">Уже существует пользователь с таким логином</string>
+    <string name="username_exists">Такое имя пользователя уже существует</string>
 </resources>
