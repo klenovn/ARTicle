@@ -2,13 +2,11 @@ package com.comrades.article
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.widget.FrameLayout
 import androidx.core.view.isVisible
 import androidx.fragment.app.add
 import androidx.fragment.app.commit
 import androidx.viewpager2.widget.ViewPager2
-import org.intellij.lang.annotations.JdkConstants.TitledBorderTitlePosition
 
 class MainMenuActivity : AppCompatActivity() {
     private lateinit var adapter: ArticleAdapter

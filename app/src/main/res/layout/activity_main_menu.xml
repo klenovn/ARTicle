@@ -29,7 +29,6 @@
         app:layout_constraintTop_toTopOf="parent" />
 
 
-
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/navbar"
         android:layout_width="match_parent"

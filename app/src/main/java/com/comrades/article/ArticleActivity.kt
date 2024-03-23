@@ -2,7 +2,6 @@ package com.comrades.article
 
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
@@ -13,7 +12,6 @@ class ArticleActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.article_activity)
-        Log.d("MY_TAG", intent.getIntExtra(ID, 1).toString())
         val currId = intent.getIntExtra(ID, 1)
         val current: ArticleResponse = Controller.getDataById(currId)
 

@@ -19,7 +19,7 @@ const val CAPTION = "caption"
 const val IMAGE_ID = "image_id"
 
 
-class MainFragment: Fragment(R.layout.main_menu_fragment) {
+class MainMenuFragment: Fragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -51,7 +51,7 @@ class MainFragment: Fragment(R.layout.main_menu_fragment) {
     }
 
     companion object {
-        fun newInstance(article: ArticleResponse) = MainFragment().apply {
+        fun newInstance(article: ArticleResponse) = MainMenuFragment().apply {
             arguments = bundleOf(
                 ID to article.id,
                 TITLE to article.title,

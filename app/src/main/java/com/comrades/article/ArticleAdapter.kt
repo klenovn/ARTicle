@@ -13,7 +13,7 @@ class ArticleAdapter(
     override fun createFragment(position: Int): Fragment {
         val current = articles[position]
 
-        return MainFragment.newInstance(current)
+        return MainMenuFragment.newInstance(current)
     }
 
 }
