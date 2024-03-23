@@ -43,4 +43,8 @@
     <string name="user_exists">Данный логин уже есть в системе</string>
     <string name="username_exists">Такое имя пользователя уже существует</string>
     <string name="authorization_error">Вы ввели неверный логин или пароль</string>
+    <string name="recover_password">Востановление пароля</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="confirm">Подтвердить</string>
+    <string name="recivery_conditions">Забыли пароль? Для восстановления, введите номер телефона или почту, на которую зарегестрирован Ваш аккаунт.</string>
 </resources>
