@@ -13,7 +13,7 @@ object Controller {
     private val articlePool = HashMap<Int, ArticleResponse>()
 
     init {
-        for (i in 0 .. 9) {
+        for (i in 0..9) {
             val curr = ArticleResponse(
                 i,
                 "ART $i",
@@ -39,5 +39,6 @@ object Controller {
 
         }
     }
+
 
 }

@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.EditText
+import android.widget.GridLayout
 import android.widget.TextView
 import android.widget.Toast
 import androidx.core.content.ContextCompat
@@ -27,6 +28,8 @@ class SecondDataFragment : Fragment() {
             view.findViewById<TextView>(R.id.hiddenErrorRepeatedPassword)
         val email = SecondDataFragmentArgs.fromBundle(requireArguments()).email
         val username = SecondDataFragmentArgs.fromBundle(requireArguments()).username
+        val layoutPassword = view.findViewById<GridLayout>(R.id.inputLayoutPassword)
+        val layoutRepeatedPassword = view.findViewById<GridLayout>(R.id.inputLayoutRepeatedPassword)
 
         btnRegistration.setOnClickListener {
             var password = editTextPassword.text.toString()
@@ -35,8 +38,40 @@ class SecondDataFragment : Fragment() {
             val flagField2 = isValidField(password, repeatedPassword, 4)
             when {
                 flagField1 && flagField2 -> {
-
-                    add(email, username, password) { result: Boolean, error: Throwable? ->
+                    layoutPassword.background = ContextCompat.getDrawable(
+                        requireContext(),
+                        R.drawable.input_layout_success
+                    )
+                    layoutRepeatedPassword.background = ContextCompat.getDrawable(
+                        requireContext(),
+                        R.drawable.input_layout_success
+                    )
+                    hiddenErrorPassword.visibility = View.VISIBLE
+                    hiddenErrorPassword.text =
+                        ContextCompat.getString(
+                            requireContext(),
+                            R.string.valid
+                        )
+                    hiddenErrorPassword.setTextColor(
+                        ContextCompat.getColor(
+                            requireContext(),
+                            R.color.green
+                        )
+                    )
+                    hiddenErrorRepeatedPassword.visibility = View.VISIBLE
+                    hiddenErrorRepeatedPassword.text =
+                        ContextCompat.getString(requireContext(), R.string.valid)
+                    hiddenErrorRepeatedPassword.setTextColor(
+                        ContextCompat.getColor(
+                            requireContext(),
+                            R.color.green
+                        )
+                    )
+                    ControllerDatabase.add(
+                        email,
+                        username,
+                        password
+                    ) { result: Boolean, error: Throwable? ->
                         if (result) {
                             view.findNavController()
                                 .navigate(R.id.action_secondDataFragment_to_successRegistrationFragment)
@@ -51,6 +86,14 @@ class SecondDataFragment : Fragment() {
                 }
 
                 !flagField1 -> {
+                    layoutPassword.background = ContextCompat.getDrawable(
+                        requireContext(),
+                        R.drawable.input_layout_error
+                    )
+                    layoutRepeatedPassword.background = ContextCompat.getDrawable(
+                        requireContext(),
+                        R.drawable.input_layout_error
+                    )
                     hiddenErrorPassword.visibility = View.VISIBLE
                     hiddenErrorPassword.text =
                         ContextCompat.getString(requireContext(), R.string.invalid)
@@ -72,6 +115,14 @@ class SecondDataFragment : Fragment() {
                 }
 
                 flagField1 && !flagField2 -> {
+                    layoutPassword.background = ContextCompat.getDrawable(
+                        requireContext(),
+                        R.drawable.input_layout_success
+                    )
+                    layoutRepeatedPassword.background = ContextCompat.getDrawable(
+                        requireContext(),
+                        R.drawable.input_layout_error
+                    )
                     hiddenErrorRepeatedPassword.visibility = View.VISIBLE
                     hiddenErrorRepeatedPassword.text =
                         ContextCompat.getString(requireContext(), R.string.no_matching)

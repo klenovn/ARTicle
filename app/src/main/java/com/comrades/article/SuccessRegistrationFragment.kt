@@ -18,8 +18,8 @@ class SuccessRegistrationFragment : Fragment() {
         val view = inflater.inflate(R.layout.fragment_success_registration, container, false)
         val btnNextStep = view.findViewById<Button>(R.id.btnMenu)
 
-        btnNextStep.setOnClickListener{
-            val intent = Intent(context, RegistrationActivity::class.java)
+        btnNextStep.setOnClickListener {
+            val intent = Intent(context, AuthorizationActivity::class.java)
             startActivity(intent)
         }
 
