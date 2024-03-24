@@ -26,7 +26,7 @@
             android:name=".CreateArticleActivity"
             android:windowSoftInputMode="adjustResize" />
         <activity android:name=".ProfileActivity" />
-        <activity android:name=".ArticleActivity_old" />
+        <activity android:name=".old.ArticleActivity_old" />
         <activity android:name=".AuthorizationActivity" />
         <activity android:name=".RegistrationActivity" />
     </application>

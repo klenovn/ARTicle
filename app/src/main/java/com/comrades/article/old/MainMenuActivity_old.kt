@@ -1,4 +1,4 @@
-package com.comrades.article
+package com.comrades.article.old
 
 //class MainMenuActivity_old : AppCompatActivity() {
 //    private lateinit var adapter: ArticleAdapter_old

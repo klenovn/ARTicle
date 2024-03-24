@@ -1,4 +1,4 @@
-package com.comrades.article
+package com.comrades.article.old
 
 //import androidx.fragment.app.Fragment
 //import androidx.viewpager2.adapter.FragmentStateAdapter

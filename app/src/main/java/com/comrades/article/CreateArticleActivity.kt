@@ -8,6 +8,7 @@ import android.widget.ImageButton
 import android.widget.ImageView
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
+import com.comrades.article.old.ArticleActivity_old
 import com.google.android.material.button.MaterialButton
 
 class CreateArticleActivity : AppCompatActivity() {
