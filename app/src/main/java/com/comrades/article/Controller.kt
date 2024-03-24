@@ -13,9 +13,10 @@ object Controller {
     private val articlePool = HashMap<Int, ArticleResponse>()
 
     init {
-        for (i in 0..9) {
+        for (i in 0 .. 9) {
             val curr = ArticleResponse(
                 i,
+                "author$i",
                 "ART $i",
                 "DESC $i",
                 "CAP $i",
@@ -40,5 +41,19 @@ object Controller {
         }
     }
 
+    fun createArticle(
+        authorNickname: String,
+        title: String,
+        caption: String,
+        description: String,
+        contents: String,
+        imageId: Int
+    ) : Int {
+        val countArticles = articlePool.size
+        val article = ArticleResponse(countArticles, authorNickname, title, description, caption, contents, imageId)
+        articlePool[countArticles] = article
+
+        return countArticles
+    }
 
 }

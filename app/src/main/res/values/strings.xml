@@ -1,4 +1,5 @@
 <resources>
+
     <string name="app_name">ARTicle</string>
     <string name="title">article_title</string>
     <string name="caption">article_caption</string>
@@ -47,4 +48,6 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="confirm">Подтвердить</string>
     <string name="recivery_conditions">Забыли пароль? Для восстановления, введите номер телефона или почту, на которую зарегестрирован Ваш аккаунт.</string>
+    <string name="to_menu">Перейти в гланое меню</string>
+    <string name="by_author"> .by</string>
 </resources>

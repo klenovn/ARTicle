@@ -30,9 +30,8 @@
 
 
 
-    <include
+    <androidx.fragment.app.FragmentContainerView
         android:id="@+id/navbar"
-        layout="@layout/navbar_fragment"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"/>

@@ -24,7 +24,7 @@
             android:layout_height="@dimen/article_item_image"
             android:layout_margin="@dimen/profile_default_margin"
             android:id="@+id/item_image"
-            android:src="@drawable/example_profile_image"
+            android:src="@drawable/jojo_main"
             android:scaleType="centerCrop"
             android:adjustViewBounds="true"
             app:shapeAppearance="@style/rounded"
