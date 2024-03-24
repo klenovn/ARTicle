@@ -26,7 +26,7 @@ class MainMenuFragment: Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.main_menu_fragment, container, false)
+        return inflater.inflate(R.layout.main_menu_fragment_old, container, false)
     }
 
 
@@ -44,7 +44,7 @@ class MainMenuFragment: Fragment() {
         }
         val moreButton = view.findViewById<Button>(R.id.button_more)
         moreButton.setOnClickListener {
-            val intent = Intent(it.context, ArticleActivity::class.java)
+            val intent = Intent(it.context, ArticleActivity_old::class.java)
             intent.putExtra(ID, arguments?.getInt(ID))
             context?.startActivity(intent)
         }

@@ -51,7 +51,7 @@ class CreateArticleActivity : AppCompatActivity() {
         postButton.setOnClickListener {
             if (validateInputs()) {
                 val newArticleId = Controller.createArticle(titleEditText.text.toString(), "DebugUser", "Desc", contentEditText.text.toString(),  R.drawable.jojo_main)
-                val intent = Intent(this, ArticleActivity::class.java).apply {
+                val intent = Intent(this, ArticleActivity_old::class.java).apply {
                     putExtra("id", newArticleId)
                 }
                 finish()

@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <ImageView
+        android:id="@+id/article_image_iv"
+        android:layout_width="wrap_content"
+        android:layout_height="227dp"
+        android:contentDescription="@string/content_description_image"
+        android:src="@drawable/jojo_main"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/current_article_title_tv"
+        android:layout_width="314dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="80dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="80dp"
+        android:text="@string/title"
+        android:textColor="@color/black"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/article_image_iv" />
+
+    <TextView
+        android:id="@+id/current_article_description_tv"
+        android:layout_width="314dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="80dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="80dp"
+        android:text="@string/description"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/current_article_title_tv" />
+
+    <TextView
+        android:id="@+id/current_article_caption_tv"
+        android:layout_width="314dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="80dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="80dp"
+        android:text="@string/caption"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/current_article_description_tv" />
+
+
+    <TextView
+        android:id="@+id/current_article_contents_tv"
+        android:layout_width="314dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="80dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="80dp"
+        android:text="@string/contents"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/current_article_caption_tv" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/current_article_comments_btn"
+        android:layout_width="292dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="34dp"
+        android:layout_marginTop="17dp"
+        android:layout_marginEnd="34dp"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/button_rounded_3"
+        android:text="@string/comments"
+        android:textAllCaps="false"
+        android:textColor="@color/pink"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/current_article_contents_tv" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/current_article_share_btn"
+        android:layout_width="292dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="34dp"
+        android:layout_marginTop="17dp"
+        android:layout_marginEnd="34dp"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/button_rounded_3"
+        android:text="@string/share"
+        android:textAllCaps="false"
+        android:textColor="@color/pink"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/current_article_comments_btn" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
