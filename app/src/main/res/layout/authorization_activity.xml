@@ -1,180 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
-    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/nav_host_fragment_1"
+        android:name="androidx.navigation.fragment.NavHostFragment"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-        <com.google.android.material.imageview.ShapeableImageView
-            android:id="@+id/imageView"
-            android:layout_width="170dp"
-            android:layout_height="170dp"
-            android:layout_marginStart="80dp"
-            android:layout_marginTop="40dp"
-            android:layout_marginEnd="80dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/authorization"
-            app:shapeAppearanceOverlay="@style/circular"
-            app:strokeWidth="1dp"
-            app:strokeColor="@color/black"/>
-
-        <TextView
-            android:id="@+id/textView1"
-            android:layout_height="wrap_content"
-            android:layout_width="314dp"
-            android:text="@string/registration_text"
-            android:textSize="20sp"
-            android:layout_marginStart="80dp"
-            android:layout_marginTop="30dp"
-            android:layout_marginEnd="80dp"
-            android:layout_marginBottom="100dp"
-            android:textColor="@color/black"
-            android:textStyle="bold"
-            android:textAlignment="center"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imageView"
-           />
-    <TextView
-        android:id="@+id/textID"
-        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="47dp"
-        android:layout_marginTop="30dp"
-        android:text="@string/uid"
-        android:textColor="@color/light_grey"
-        android:textSize="14sp"
-        app:layout_constraintStart_toStartOf="@id/textView1"
-        app:layout_constraintTop_toBottomOf="@id/textView1"/>
-
-    <GridLayout
-        android:id="@+id/inputLayoutEmail"
-        android:layout_width="292dp"
-        android:layout_height="50dp"
-        android:layout_marginStart="34dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="34dp"
-        android:background="@drawable/input_layout_1"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:defaultNavHost="true"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textID">
-
-        <ImageView
-            android:id="@+id/emailIcon"
-            android:layout_width="50dp"
-            android:layout_height="match_parent"
-            android:layout_column="0"
-            android:padding="15dp"
-            android:src="@drawable/email" />
-
-        <EditText
-            android:id="@+id/textEmailAddress"
-            android:layout_width="228dp"
-            android:layout_height="40dp"
-            android:ems="20"
-            android:layout_margin="5dp"
-            android:hint="@string/phone"
-            android:inputType="text"
-            android:background="@android:color/transparent"
-            android:padding="10dp"
-            android:textColor="@color/light_grey" />
-    </GridLayout>
-
-    <TextView
-        android:id="@+id/textPAS"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:layout_marginStart="47dp"
-        android:text="@string/upassword"
-        android:textColor="@color/light_grey"
-        android:textSize="14sp"
-        app:layout_constraintStart_toStartOf="@id/textView1"
-        app:layout_constraintTop_toBottomOf="@+id/inputLayoutEmail" />
-
-    <GridLayout
-        android:id="@+id/inputLayoutPassword"
-        android:layout_width="292dp"
-        android:layout_height="50dp"
-        android:layout_marginStart="34dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="34dp"
-        android:background="@drawable/input_layout_1"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textPAS">
-
-        <ImageView
-            android:id="@+id/passwordIcon"
-            android:layout_width="50dp"
-            android:layout_height="match_parent"
-            android:layout_column="0"
-            android:padding="15dp"
-
-            android:src="@drawable/icon_password" />
-
-        <EditText
-            android:id="@+id/textPassword"
-            android:layout_width="236dp"
-            android:layout_height="40dp"
-            android:layout_margin="5dp"
-            android:background="@android:color/transparent"
-            android:ems="20"
-            android:hint="@string/password"
-            android:inputType="textPassword"
-            android:padding="10dp"
-            android:textColor="@color/light_grey" />
-    </GridLayout>
-
-
-    <TextView
-        android:id="@+id/textFofgot"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="47dp"
-        android:layout_marginTop="14dp"
-        android:text="@string/forget"
-        android:textColor="@color/pink"
-        android:textSize="14sp"
-        app:layout_constraintStart_toStartOf="@id/textView1"
-        app:layout_constraintTop_toBottomOf="@id/inputLayoutPassword" />
-
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/btn1"
-        android:layout_width="292dp"
-        android:layout_height="50dp"
-        android:layout_marginStart="34dp"
-        android:layout_marginTop="35dp"
-        android:layout_marginEnd="34dp"
-        android:background="@drawable/button_rounded_1"
-        android:padding="10dp"
-        android:text="@string/in"
-        android:textAllCaps="false"
-        android:textColor="@color/pink"
-        android:textSize="14sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/textFofgot" />
-
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/btn2"
-        android:layout_width="292dp"
-        android:layout_height="50dp"
-        android:layout_marginStart="34dp"
-        android:layout_marginTop="17dp"
-        android:layout_marginEnd="34dp"
-        android:layout_marginBottom="10dp"
-        android:background="@drawable/button_rounded_2"
-        android:text="@string/reg"
-        android:textAllCaps="false"
-        android:textColor="@color/black"
-        android:textSize="14sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/btn1" />
+        app:navGraph="@navigation/nav_graph_authorization" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,4 +1,5 @@
 <resources>
+
     <string name="app_name">ARTicle</string>
     <string name="title">article_title</string>
     <string name="caption">article_caption</string>
@@ -8,8 +9,6 @@
     <string name="comments">Комментарии</string>
     <string name="share">Поделиться</string>
     <string name="todo">TODO</string>
-    <string name="create_article_post_button">Post</string>
-    <string name="create_article_content_description">Article Image</string>
     <string name="my_articles">Мои статьи</string>
     <string name="about_me">Обо мне</string>
     <string name="robot_desc">robot</string>
@@ -39,5 +38,26 @@
     <string name="nextStep">Далее</string>
     <string name="no_matching">Ваши пароли не совпадают</string>
     <string name="success">Вы успешно зарегестрированы в системе!</string>
+    <string name="continue_reg">Продолжить</string>
+    <string name="user_exists">Данный логин уже есть в системе</string>
+    <string name="username_exists">Такое имя пользователя уже существует</string>
+    <string name="authorization_error">Вы ввели неверный логин или пароль</string>
+    <string name="recover_password">Востановление пароля</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="confirm">Подтвердить</string>
+    <string name="recivery_conditions">Забыли пароль? Для восстановления, введите номер телефона или почту, на которую зарегестрирован Ваш аккаунт.</string>
     <string name="to_menu">Перейти в гланое меню</string>
+    <string name="by_author"> .by</string>
+    <string name="create_article__post_button">Опубликовать</string>
+    <string name="create_article__content_description">Картинка статьи</string>
+    <string name="create_article__enter_title">Введите название</string>
+    <string name="create_article__enter_caption">Отображается в поиске</string>
+    <string name="create_article__enter_article_content">Поделитель мыслями с миром</string>
+    <string name="create_article__enter_description">Описание статьи</string>
+    <string name="create_article__close_button">Close</string>
+    <string name="create_article__add_photo">Add photo</string>
+    <string name="create_article__title_label">Название</string>
+    <string name="create_article__caption_label">Краткое описание</string>
+    <string name="create_article__description_label">Описание</string>
+    <string name="create_article__content_label">Содержание</string>
 </resources>

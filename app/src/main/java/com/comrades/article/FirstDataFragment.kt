@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.EditText
+import android.widget.GridLayout
 import android.widget.TextView
 import androidx.core.content.ContextCompat
 import androidx.navigation.findNavController
@@ -23,37 +24,283 @@ class FirstDataFragment : Fragment() {
         val editTextUsername = view.findViewById<EditText>(R.id.textUsername)
         val hiddenErrorEmail = view.findViewById<TextView>(R.id.hiddenErrorEamil)
         val hiddenErrorUsername = view.findViewById<TextView>(R.id.hiddenErrorUsername)
+        val layoutEmail = view.findViewById<GridLayout>(R.id.inputLayoutEmail)
+        val layoutUsername = view.findViewById<GridLayout>(R.id.inputLayoutUsername)
 
         btnNextStep.setOnClickListener {
-            val flagField1 = isValidField(editTextEmail.text.toString(), fieldPosition = 1)
-            val flagField2 = isValidField(editTextUsername.text.toString(), fieldPosition = 2)
+            val email = editTextEmail.text.toString()
+            val username = editTextUsername.text.toString()
+            val flagField1 = isValidField(email, fieldPosition = 1)
+            val flagField2 = isValidField(username, fieldPosition = 2)
             when {
-                flagField1 && flagField2 -> view.findNavController()
-                    .navigate(R.id.action_firstDataFragment_to_secondDataFragment)
+                flagField1 && flagField2 -> {
+                    ControllerDatabase.exists(email, username) {
+                        when {
+                            it.first && it.second -> {
+                                layoutEmail.background = ContextCompat.getDrawable(
+                                    requireContext(),
+                                    R.drawable.input_layout_success
+                                )
+                                layoutUsername.background = ContextCompat.getDrawable(
+                                    requireContext(),
+                                    R.drawable.input_layout_success
+                                )
+                                hiddenErrorUsername.visibility = View.VISIBLE
+                                hiddenErrorUsername.text =
+                                    ContextCompat.getString(
+                                        requireContext(),
+                                        R.string.valid
+                                    )
+                                hiddenErrorUsername.setTextColor(
+                                    ContextCompat.getColor(
+                                        requireContext(),
+                                        R.color.green
+                                    )
+                                )
+                                hiddenErrorEmail.visibility = View.VISIBLE
+                                hiddenErrorEmail.text =
+                                    ContextCompat.getString(requireContext(), R.string.valid)
+                                hiddenErrorEmail.setTextColor(
+                                    ContextCompat.getColor(
+                                        requireContext(),
+                                        R.color.green
+                                    )
+                                )
+                                val action =
+                                    FirstDataFragmentDirections.actionFirstDataFragmentToSecondDataFragment(
+                                        email,
+                                        username
+                                    )
+                                view.findNavController()
+                                    .navigate(action)
+                            }
+
+                            !it.first -> {
+                                layoutEmail.background = ContextCompat.getDrawable(
+                                    requireContext(),
+                                    R.drawable.input_layout_error
+                                )
+                                layoutUsername.background = ContextCompat.getDrawable(
+                                    requireContext(),
+                                    R.drawable.input_layout_success
+                                )
+                                hiddenErrorEmail.visibility = View.VISIBLE
+                                hiddenErrorEmail.text =
+                                    ContextCompat.getString(requireContext(), R.string.user_exists)
+                                hiddenErrorEmail.setTextColor(
+                                    ContextCompat.getColor(
+                                        requireContext(),
+                                        R.color.red
+                                    )
+                                )
+                                hiddenErrorUsername.visibility = View.VISIBLE
+                                hiddenErrorUsername.text =
+                                    ContextCompat.getString(requireContext(), R.string.valid)
+                                hiddenErrorUsername.setTextColor(
+                                    ContextCompat.getColor(
+                                        requireContext(),
+                                        R.color.green
+                                    )
+                                )
+
+                            }
+
+                            it.first && !it.second -> {
+                                layoutEmail.background = ContextCompat.getDrawable(
+                                    requireContext(),
+                                    R.drawable.input_layout_success
+                                )
+                                layoutUsername.background = ContextCompat.getDrawable(
+                                    requireContext(),
+                                    R.drawable.input_layout_error
+                                )
+                                hiddenErrorUsername.visibility = View.VISIBLE
+                                hiddenErrorUsername.text =
+                                    ContextCompat.getString(
+                                        requireContext(),
+                                        R.string.username_exists
+                                    )
+                                hiddenErrorUsername.setTextColor(
+                                    ContextCompat.getColor(
+                                        requireContext(),
+                                        R.color.red
+                                    )
+                                )
+                                hiddenErrorEmail.visibility = View.VISIBLE
+                                hiddenErrorEmail.text =
+                                    ContextCompat.getString(requireContext(), R.string.valid)
+                                hiddenErrorEmail.setTextColor(
+                                    ContextCompat.getColor(
+                                        requireContext(),
+                                        R.color.green
+                                    )
+                                )
+                            }
+                        }
+
+                    }
+                }
 
                 !flagField1 && flagField2 -> {
-                    hiddenErrorEmail.visibility = View.VISIBLE
-                    hiddenErrorEmail.text = ContextCompat.getString(requireContext(), R.string.invalid)
-                    hiddenErrorEmail.setTextColor(ContextCompat.getColor(requireContext(), R.color.red))
-                    hiddenErrorUsername.visibility = View.VISIBLE
-                    hiddenErrorUsername.text = ContextCompat.getString(requireContext(), R.string.valid)
-                    hiddenErrorUsername.setTextColor(ContextCompat.getColor(requireContext(), R.color.green))
+                    ControllerDatabase.exists(email, username) {
+                        if (!it.second) {
+                            layoutEmail.background = ContextCompat.getDrawable(
+                                requireContext(),
+                                R.drawable.input_layout_error
+                            )
+                            hiddenErrorEmail.visibility = View.VISIBLE
+                            hiddenErrorEmail.text =
+                                ContextCompat.getString(requireContext(), R.string.invalid)
+                            hiddenErrorEmail.setTextColor(
+                                ContextCompat.getColor(
+                                    requireContext(),
+                                    R.color.red
+                                )
+                            )
+                            layoutUsername.background = ContextCompat.getDrawable(
+                                requireContext(),
+                                R.drawable.input_layout_error
+                            )
+                            hiddenErrorUsername.visibility = View.VISIBLE
+                            hiddenErrorUsername.text =
+                                ContextCompat.getString(
+                                    requireContext(),
+                                    R.string.username_exists
+                                )
+                            hiddenErrorUsername.setTextColor(
+                                ContextCompat.getColor(
+                                    requireContext(),
+                                    R.color.red
+                                )
+                            )
+                        } else {
+                            layoutEmail.background = ContextCompat.getDrawable(
+                                requireContext(),
+                                R.drawable.input_layout_error
+                            )
+                            hiddenErrorEmail.visibility = View.VISIBLE
+                            hiddenErrorEmail.text =
+                                ContextCompat.getString(requireContext(), R.string.invalid)
+                            hiddenErrorEmail.setTextColor(
+                                ContextCompat.getColor(
+                                    requireContext(),
+                                    R.color.red
+                                )
+                            )
+                            layoutUsername.background = ContextCompat.getDrawable(
+                                requireContext(),
+                                R.drawable.input_layout_success
+                            )
+                            hiddenErrorUsername.visibility = View.VISIBLE
+                            hiddenErrorUsername.text =
+                                ContextCompat.getString(
+                                    requireContext(),
+                                    R.string.valid
+                                )
+                            hiddenErrorUsername.setTextColor(
+                                ContextCompat.getColor(
+                                    requireContext(),
+                                    R.color.green
+                                )
+                            )
+                        }
+                    }
                 }
+
                 flagField1 && !flagField2 -> {
-                    hiddenErrorUsername.visibility = View.VISIBLE
-                    hiddenErrorUsername.text = ContextCompat.getString(requireContext(), R.string.invalid)
-                    hiddenErrorUsername.setTextColor(ContextCompat.getColor(requireContext(), R.color.red))
-                    hiddenErrorEmail.visibility = View.VISIBLE
-                    hiddenErrorEmail.text = ContextCompat.getString(requireContext(), R.string.valid)
-                    hiddenErrorEmail.setTextColor(ContextCompat.getColor(requireContext(), R.color.green))
+                    ControllerDatabase.exists(email, username) {
+                        if (!it.first) {
+                            layoutUsername.background = ContextCompat.getDrawable(
+                                requireContext(),
+                                R.drawable.input_layout_error
+                            )
+                            hiddenErrorUsername.visibility = View.VISIBLE
+                            hiddenErrorUsername.text =
+                                ContextCompat.getString(requireContext(), R.string.invalid)
+                            hiddenErrorUsername.setTextColor(
+                                ContextCompat.getColor(
+                                    requireContext(),
+                                    R.color.red
+                                )
+                            )
+                            layoutEmail.background = ContextCompat.getDrawable(
+                                requireContext(),
+                                R.drawable.input_layout_error
+                            )
+                            hiddenErrorEmail.visibility = View.VISIBLE
+                            hiddenErrorEmail.text =
+                                ContextCompat.getString(
+                                    requireContext(),
+                                    R.string.user_exists
+                                )
+                            hiddenErrorEmail.setTextColor(
+                                ContextCompat.getColor(
+                                    requireContext(),
+                                    R.color.red
+                                )
+                            )
+                        } else {
+                            layoutUsername.background = ContextCompat.getDrawable(
+                                requireContext(),
+                                R.drawable.input_layout_error
+                            )
+                            hiddenErrorUsername.visibility = View.VISIBLE
+                            hiddenErrorUsername.text =
+                                ContextCompat.getString(requireContext(), R.string.invalid)
+                            hiddenErrorUsername.setTextColor(
+                                ContextCompat.getColor(
+                                    requireContext(),
+                                    R.color.red
+                                )
+                            )
+                            layoutEmail.background = ContextCompat.getDrawable(
+                                requireContext(),
+                                R.drawable.input_layout_success
+                            )
+                            hiddenErrorEmail.visibility = View.VISIBLE
+                            hiddenErrorEmail.text =
+                                ContextCompat.getString(
+                                    requireContext(),
+                                    R.string.valid
+                                )
+                            hiddenErrorEmail.setTextColor(
+                                ContextCompat.getColor(
+                                    requireContext(),
+                                    R.color.green
+                                )
+                            )
+                        }
+                    }
+
                 }
+
                 !flagField1 && !flagField2 -> {
+                    layoutEmail.background = ContextCompat.getDrawable(
+                        requireContext(),
+                        R.drawable.input_layout_error
+                    )
+                    layoutUsername.background = ContextCompat.getDrawable(
+                        requireContext(),
+                        R.drawable.input_layout_error
+                    )
                     hiddenErrorUsername.visibility = View.VISIBLE
-                    hiddenErrorUsername.text = ContextCompat.getString(requireContext(), R.string.invalid)
-                    hiddenErrorUsername.setTextColor(ContextCompat.getColor(requireContext(), R.color.red))
+                    hiddenErrorUsername.text =
+                        ContextCompat.getString(requireContext(), R.string.invalid)
+                    hiddenErrorUsername.setTextColor(
+                        ContextCompat.getColor(
+                            requireContext(),
+                            R.color.red
+                        )
+                    )
                     hiddenErrorEmail.visibility = View.VISIBLE
-                    hiddenErrorEmail.text = ContextCompat.getString(requireContext(), R.string.invalid)
-                    hiddenErrorEmail.setTextColor(ContextCompat.getColor(requireContext(), R.color.red))
+                    hiddenErrorEmail.text =
+                        ContextCompat.getString(requireContext(), R.string.invalid)
+                    hiddenErrorEmail.setTextColor(
+                        ContextCompat.getColor(
+                            requireContext(),
+                            R.color.red
+                        )
+                    )
                 }
             }
         }
