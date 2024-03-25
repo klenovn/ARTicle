@@ -6,7 +6,7 @@
 
     <fragment
         android:id="@+id/firstDataFragment"
-        android:name="com.comrades.article.FirstDataFragment"
+        android:name="com.comrades.article.fragments.FirstDataFragment"
         android:label="FirstDataFragment" >
         <action
             android:id="@+id/action_firstDataFragment_to_secondDataFragment"
@@ -16,7 +16,7 @@
     </fragment>
     <fragment
         android:id="@+id/secondDataFragment"
-        android:name="com.comrades.article.SecondDataFragment"
+        android:name="com.comrades.article.fragments.SecondDataFragment"
         android:label="SecondDataFragment" >
         <action
             android:id="@+id/action_secondDataFragment_to_successRegistrationFragment"
@@ -32,6 +32,6 @@
     </fragment>
     <fragment
         android:id="@+id/successRegistrationFragment"
-        android:name="com.comrades.article.SuccessRegistrationFragment"
+        android:name="com.comrades.article.fragments.SuccessRegistrationFragment"
         android:label="SuccessRegistrationFragment" />
 </navigation>
