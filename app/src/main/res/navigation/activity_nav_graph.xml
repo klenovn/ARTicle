@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/mainMenuSwipeFragment"
-        android:name="com.comrades.article.MainMenuSwipeFragment"
+        android:name="com.comrades.article.fragments.MainMenuSwipeFragment"
         android:label="fragment_swipe"
         tools:layout="@layout/fragment_swipe" >
         <action
@@ -16,7 +16,7 @@
     </fragment>
     <fragment
         android:id="@+id/currentArticleFragment"
-        android:name="com.comrades.article.CurrentArticleFragment"
+        android:name="com.comrades.article.fragments.CurrentArticleFragment"
         android:label="CurrentArticleFragment" >
         <argument
             android:name="articleId"

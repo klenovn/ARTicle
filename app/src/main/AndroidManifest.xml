@@ -15,7 +15,7 @@
         android:theme="@style/Theme.Article"
         tools:targetApi="31">
         <activity
-            android:name=".AuthorizationActivity"
+            android:name=".activities.AuthorizationActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -23,13 +23,12 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".CreateArticleActivity"
+            android:name=".activities.CreateArticleActivity"
             android:windowSoftInputMode="adjustResize" />
-        <activity android:name=".ProfileActivity" />
-        <activity android:name=".ArticleActivity" />
-        <activity android:name=".RegistrationActivity" />
-        <activity android:name=".MainActivity" />
-        <activity android:name=".MainMenuActivity"/>
+        <activity android:name=".activities.ProfileActivity" />
+        <activity android:name=".activities.ArticleActivity" />
+        <activity android:name=".activities.RegistrationActivity" />
+        <activity android:name=".activities.MainMenuActivity"/>
     </application>
 
 </manifest>

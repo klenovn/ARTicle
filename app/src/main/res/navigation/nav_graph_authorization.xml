@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/authorizationFragment"
-        android:name="com.comrades.article.AuthorizationFragment"
+        android:name="com.comrades.article.fragments.AuthorizationFragment"
         android:label="AuthorizationFragment">
         <action
             android:id="@+id/action_authorizationFragment_to_recoveryFragment"
@@ -15,6 +15,6 @@
     </fragment>
     <fragment
         android:id="@+id/recoveryFragment"
-        android:name="com.comrades.article.RecoveryFragment"
+        android:name="com.comrades.article.fragments.RecoveryFragment"
         android:label="RecoveryFragment" />
 </navigation>

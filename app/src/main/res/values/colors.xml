@@ -20,4 +20,5 @@
     <color name="green">#FF52A735</color>
     <color name="very_light_gray">#ededed</color>
     <color name="light_grey_card_background">#E3E3E3</color>
+    <color name="black_75_opacity">#BF000000</color>
 </resources>

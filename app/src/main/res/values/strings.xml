@@ -60,4 +60,5 @@
     <string name="create_article__caption_label">Краткое описание</string>
     <string name="create_article__description_label">Описание</string>
     <string name="create_article__content_label">Содержание</string>
+    <string name="avatar_full">full avatar image</string>
 </resources>

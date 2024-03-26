@@ -1,0 +1,11 @@
+package com.comrades.article.models
+
+data class ArticleResponse(
+    val id: Int,
+    val authorNickname: String,
+    val title: String,
+    val description: String,
+    val caption: String,
+    val contents: String,
+    val imageId: Int,
+)
