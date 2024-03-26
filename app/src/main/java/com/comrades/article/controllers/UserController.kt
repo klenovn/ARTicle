@@ -21,5 +21,5 @@ object UserController {
         }
 
         fun getUserByNickname(nickname: String) = (userPool.find { it.nickname == nickname }) ?:
-        User("not_founded_user", "", "", R.drawable.no_avatar,"")
+        User("DebugUser", "", "", R.drawable.no_avatar,"")
 }

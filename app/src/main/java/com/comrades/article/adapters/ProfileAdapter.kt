@@ -27,15 +27,10 @@ class ProfileAdapter(
             articleImageView.setImageResource(article.imageId)
 
             itemView.setOnClickListener{
-//                (it.context as? AppCompatActivity)?.apply {
-//                    supportFragmentManager.beginTransaction().add(R.id.fragment_container_view,
-//                        ArticleActivity)
-//                }
                 val articleIntent = Intent(it.context, ArticleActivity::class.java).apply {
-                    putExtra("id", titleTextView.text.toString())
+                    putExtra("id", article.id)
                 }
                 startActivity(it.context, articleIntent, null)
-//                Toast.makeText(it.context, "pomogite", Toast.LENGTH_SHORT).show()
             }
         }
     }
