@@ -8,9 +8,9 @@ import android.widget.ImageButton
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
-import com.comrades.article.models.ArticleResponse
 import com.comrades.article.R
 import com.comrades.article.controllers.Controller
+import com.comrades.article.models.ArticleResponse
 
 class ArticleActivity : AppCompatActivity() {
 
@@ -18,7 +18,7 @@ class ArticleActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.article_activity)
         Log.d("MY_TAG", intent.getIntExtra(ID, 1).toString())
-        val currId = intent.getIntExtra(ID, 1)
+        val currId : Int = intent.getIntExtra(ID, 1)
         val current: ArticleResponse = Controller.getDataById(currId)
 
         val authorTV : TextView = findViewById(R.id.author_tv__second_fragment)

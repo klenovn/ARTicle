@@ -10,10 +10,10 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
-import com.comrades.article.models.ArticleResponse
 import com.comrades.article.R
 import com.comrades.article.activities.ArticleActivity
 import com.comrades.article.activities.ProfileActivity
+import com.comrades.article.models.ArticleResponse
 
 class ArticleAdapter(
     private val articles: List<ArticleResponse>
@@ -59,7 +59,7 @@ class ArticleAdapter(
 //                articleView.findNavController()
 //                    .navigate(action)
                 val articleIntent = Intent(it.context, ArticleActivity::class.java).apply {
-                    putExtra("id", title.text.toString())
+                    putExtra("id", article.id)
                 }
                 ContextCompat.startActivity(it.context, articleIntent, null)
             }
