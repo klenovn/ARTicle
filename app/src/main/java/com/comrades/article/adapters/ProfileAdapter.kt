@@ -28,7 +28,7 @@ class ProfileAdapter(
 
             itemView.setOnClickListener{
                 val articleIntent = Intent(it.context, ArticleActivity::class.java).apply {
-                    putExtra("id", article.id)
+                    putExtra(ArticleActivity.ID, article.id)
                 }
                 startActivity(it.context, articleIntent, null)
             }

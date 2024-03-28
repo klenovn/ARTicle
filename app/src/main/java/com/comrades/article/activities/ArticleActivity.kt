@@ -2,7 +2,6 @@ package com.comrades.article.activities
 
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import android.widget.Button
 import android.widget.ImageButton
 import android.widget.ImageView
@@ -17,23 +16,34 @@ class ArticleActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.article_activity)
-        Log.d("MY_TAG", intent.getIntExtra(ID, 1).toString())
-        val currId : Int = intent.getIntExtra(ID, 1)
+        val currId : Int = intent.getIntExtra(ID, 0)
         val current: ArticleResponse = Controller.getDataById(currId)
 
-        val authorTV : TextView = findViewById(R.id.author_tv__second_fragment)
-        authorTV.text = "@${current.authorNickname}"
-        val titleTV : TextView = findViewById(R.id.title_tv__second_fragment)
+        // AuthorTV
+        val authorTV : TextView = findViewById(R.id.article_author_tv)
+        "@${current.authorNickname}".also { authorTV.text = it }
+
+        // TitleTV
+        val titleTV : TextView = findViewById(R.id.article_title_tv)
         titleTV.text = current.title
-        val descTV : TextView = findViewById(R.id.description_tv__second_fragment)
-        descTV.text = current.description
-        val captionTV : TextView = findViewById(R.id.caption_tv__second_fragment)
-        captionTV.text = current.caption
-        val contentsTV : TextView = findViewById(R.id.contents_tv__second_fragment)
-        contentsTV.text = current.contents
-        val imageView: ImageView = findViewById(R.id.avatar)
-        imageView.setImageResource(current.imageId)
-        val closeButtonTV: ImageButton = findViewById(R.id.back_button)
+
+        // DescriptionTV
+        findViewById<TextView>(R.id.article_description_tv)
+            .apply{ text = current.description}
+
+        // CaptionTV
+        findViewById<TextView>(R.id.article_caption_tv)
+            .apply { text = current.caption }
+
+        // ContentsTV
+        findViewById<TextView>(R.id.article_contents_tv)
+            .apply { text = current.contents }
+
+        // ImageView
+        findViewById<ImageView>(R.id.article_image_iv)
+            .apply { setImageResource(current.imageId) }
+
+        val closeButton: ImageButton = findViewById(R.id.back_button)
 
         val shareButton: Button = findViewById(R.id.button_share)
         shareButton.setOnClickListener {
@@ -49,11 +59,11 @@ class ArticleActivity : AppCompatActivity() {
 
         authorTV.setOnClickListener {
             startActivity(Intent(this, ProfileActivity::class.java).apply {
-                putExtra("nickname", authorTV.text.toString())
+                putExtra(ProfileActivity.NICKNAME, authorTV.text.toString())
             })
         }
 
-        closeButtonTV.setOnClickListener{
+        closeButton.setOnClickListener{
             finish()
         }
     }

@@ -14,10 +14,10 @@
         android:contentDescription="@string/back_button_desc"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/avatar" />
+        app:layout_constraintBottom_toTopOf="@id/article_image_iv" />
 
     <ImageView
-        android:id="@+id/avatar"
+        android:id="@+id/article_image_iv"
         android:layout_width="wrap_content"
         android:layout_height="227dp"
         android:layout_marginTop="@dimen/profile_default_margin"
@@ -36,7 +36,7 @@
         android:layout_marginEnd="30dp"
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/avatar"
+        app:layout_constraintTop_toBottomOf="@+id/article_image_iv"
         app:layout_constraintStart_toStartOf="parent" >
 
         <TextView
@@ -48,7 +48,7 @@
             android:text="@string/by_author"/>
 
         <TextView
-            android:id="@+id/author_tv__second_fragment"
+            android:id="@+id/article_author_tv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="@color/pink"
@@ -58,7 +58,7 @@
     </LinearLayout>
 
     <TextView
-        android:id="@+id/title_tv__second_fragment"
+        android:id="@+id/article_title_tv"
         android:layout_width="314dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="80dp"
@@ -73,7 +73,7 @@
         app:layout_constraintTop_toBottomOf="@+id/author_nickname_line" />
 
     <TextView
-        android:id="@+id/description_tv__second_fragment"
+        android:id="@+id/article_description_tv"
         android:layout_width="314dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="80dp"
@@ -84,10 +84,10 @@
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/title_tv__second_fragment" />
+        app:layout_constraintTop_toBottomOf="@+id/article_title_tv" />
 
     <TextView
-        android:id="@+id/caption_tv__second_fragment"
+        android:id="@+id/article_caption_tv"
         android:layout_width="314dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="80dp"
@@ -98,11 +98,11 @@
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/description_tv__second_fragment" />
+        app:layout_constraintTop_toBottomOf="@+id/article_description_tv" />
 
 
     <TextView
-        android:id="@+id/contents_tv__second_fragment"
+        android:id="@+id/article_contents_tv"
         android:layout_width="314dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="80dp"
@@ -113,7 +113,7 @@
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/caption_tv__second_fragment" />
+        app:layout_constraintTop_toBottomOf="@+id/article_caption_tv" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/button_comments"
@@ -130,7 +130,7 @@
         android:textSize="14sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/contents_tv__second_fragment" />
+        app:layout_constraintTop_toBottomOf="@id/article_contents_tv" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/button_share"

@@ -31,7 +31,7 @@ class ArticleAdapter(
         holder.bind(articles[position])
     }
 
-    inner class ArticleViewHolder(private val articleView: View) :
+    inner class ArticleViewHolder(articleView: View) :
         RecyclerView.ViewHolder(articleView) {
         private val authorNickname: TextView =
             articleView.findViewById(R.id.swipeable_author_nickname)
@@ -43,13 +43,12 @@ class ArticleAdapter(
             articleView.findViewById(R.id.swipeable_description_tv)
         private val image: ImageView =
             articleView.findViewById(R.id.swipeable_image_iv)
-
         private val moreButton: Button =
             articleView.findViewById(R.id.more_button)
 
         fun bind(article: ArticleResponse) {
             title.text = article.title
-            authorNickname.text = "@${article.authorNickname}"
+            "@${article.authorNickname}".also { authorNickname.text = it }
             caption.text = article.caption
             description.text = article.description
             image.setImageResource(article.imageId)
@@ -59,18 +58,16 @@ class ArticleAdapter(
 //                articleView.findNavController()
 //                    .navigate(action)
                 val articleIntent = Intent(it.context, ArticleActivity::class.java).apply {
-                    putExtra("id", article.id)
+                    putExtra(ArticleActivity.ID, article.id)
                 }
                 ContextCompat.startActivity(it.context, articleIntent, null)
             }
 
             authorNickname.setOnClickListener {
                 val profileIntent = Intent(it.context, ProfileActivity::class.java).apply {
-                    putExtra("nickname", authorNickname.text.toString()) }
+                    putExtra(ProfileActivity.NICKNAME, authorNickname.text.toString()) }
                 ContextCompat.startActivity(it.context, profileIntent, null)
             }
         }
-
     }
-
 }

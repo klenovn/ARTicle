@@ -7,12 +7,12 @@ import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.comrades.article.adapters.ProfileAdapter
-import com.comrades.article.viewmodels.ProfileArticlesViewModel
-import com.comrades.article.fragments.ProfileAvatarFragment
 import com.comrades.article.R
-import com.comrades.article.models.User
+import com.comrades.article.adapters.ProfileAdapter
 import com.comrades.article.controllers.UserController
+import com.comrades.article.fragments.ProfileAvatarFragment
+import com.comrades.article.models.User
+import com.comrades.article.viewmodels.ProfileArticlesViewModel
 
 class ProfileActivity: AppCompatActivity(R.layout.user_profile) {
 
@@ -25,7 +25,7 @@ class ProfileActivity: AppCompatActivity(R.layout.user_profile) {
         super.onCreate(savedInstanceState)
 
         val userNickname = intent.extras?.run {
-            getString("nickname")?.substring(1)
+            getString(NICKNAME)?.substring(1)
         }
 
         if (userNickname == null) {
@@ -44,7 +44,7 @@ class ProfileActivity: AppCompatActivity(R.layout.user_profile) {
             setImageResource(user.avatar)
         }
         findViewById<TextView>(R.id.profile_nickname).apply {
-            text = "@${user.nickname}"
+            "@${user.nickname}".also { text = it }
         }
         findViewById<TextView>(R.id.profile_description).apply {
             text = user.description
@@ -60,7 +60,7 @@ class ProfileActivity: AppCompatActivity(R.layout.user_profile) {
 
         findViewById<ImageView>(R.id.profile_image).setOnClickListener{
             val args = Bundle()
-            args.putInt("avatarId", user.avatar)
+            args.putInt(AVATAR_ID, user.avatar)
             avatarFragment.arguments = args
             supportFragmentManager.beginTransaction().add(
                 R.id.fragment_container_view,
@@ -71,5 +71,10 @@ class ProfileActivity: AppCompatActivity(R.layout.user_profile) {
         findViewById<ImageButton>(R.id.back_button).setOnClickListener {
             finish()
         }
+    }
+
+    companion object {
+        const val AVATAR_ID = "avatarId"
+        const val NICKNAME = "nickname"
     }
 }

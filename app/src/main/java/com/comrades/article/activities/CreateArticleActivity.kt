@@ -44,7 +44,7 @@ class CreateArticleActivity : AppCompatActivity() {
 
 
         if (savedInstanceState != null) {
-            pickedImageUri = savedInstanceState.getParcelable("imageUri")
+            pickedImageUri = savedInstanceState.getParcelable(IMAGE_URI)
             createArticleImageView.setImageURI(pickedImageUri)
         }
 
@@ -62,7 +62,7 @@ class CreateArticleActivity : AppCompatActivity() {
                     R.drawable.jojo_main
                 )
                 val intent = Intent(this, ArticleActivity::class.java).apply {
-                    putExtra("id", newArticleId)
+                    putExtra(ArticleActivity.ID, newArticleId)
                 }
                 finish()
                 startActivity(intent)
@@ -72,7 +72,10 @@ class CreateArticleActivity : AppCompatActivity() {
 
     override fun onSaveInstanceState(outState: Bundle) {
         super.onSaveInstanceState(outState)
-        outState.putParcelable("imageUri", pickedImageUri)
+        outState.putParcelable(IMAGE_URI, pickedImageUri)
     }
 
+    companion object {
+        const val IMAGE_URI = "imageUri"
+    }
 }
